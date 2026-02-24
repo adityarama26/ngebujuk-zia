@@ -1,0 +1,10 @@
+body {
+  background-image: url("https://img.freepik.com/premium-photo/defocused-lights-form-heart-black-background_607094-211.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.btn-no {
+  position: relative;
+}
