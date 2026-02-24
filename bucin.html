@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>For My Love 💕</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <style>
+      body {
+        background-image: url("https://img.freepik.com/premium-photo/defocused-lights-form-heart-black-background_607094-211.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .btn-no {
+        position: relative;
+      }
+    </style>
+  </head>
+
+  <body class="flex items-center justify-center min-h-screen px-4">
+    <audio id="bg-music" loop>
+      <source src="MUSIK.mp3" type="audio/mpeg" />
+    </audio>
+
+    <main
+      class="bg-white/90 backdrop-blur-md rounded-3xl p-8 shadow-2xl shadow-pink-300 text-center max-w-sm w-full animate__animated animate__zoomIn"
+    >
+      <img
+        class="cat-img mx-auto"
+        src="https://media.tenor.com/cofRHcGGOfoAAAAi/shy-cute.gif"
+        width="200"
+      />
+
+      <div class="border-b-2 border-pink-200 my-4"></div>
+
+      <h2 class="title text-pink-400 text-lg font-semibold">
+        Hai sayangnya akuu 💖
+      </h2>
+
+      <p class="question text-2xl font-bold text-gray-700 mt-2">
+        Maafin aku yaa 🥺💕
+      </p>
+
+      <div class="buttons mt-6 flex justify-center gap-6 relative">
+        <button
+          type="button"
+          class="btn-yes bg-pink-500 hover:bg-pink-600 transition rounded-full text-white text-xl px-6 py-2 shadow-lg animate__animated animate__pulse animate__infinite"
+        >
+          Iyaaa 💘
+        </button>
+
+        <button
+          type="button"
+          class="btn-no bg-gray-400 hover:bg-gray-500 transition rounded-full text-white text-lg px-5 py-2 shadow-md"
+        >
+          Enggak 😝
+        </button>
+      </div>
+
+      <div class="numbers hidden mt-6">
+        <a
+          href="https://wa.me/6282116735259"
+          class="bg-green-500 hover:bg-green-600 transition text-white py-2 px-5 rounded-full text-lg font-bold shadow-lg"
+        >
+          Chat Aku Sekarang Yaa💬💕
+        </a>
+      </div>
+    </main>
+
+    <script>
+      const music = document.getElementById("bg-music");
+
+      document.addEventListener(
+        "click",
+        function () {
+          music.play();
+        },
+        { once: true },
+      );
+
+      const buttonsContainer = document.querySelector(".buttons");
+      const numberContainer = document.querySelector(".numbers");
+      const yesButton = document.querySelector(".btn-yes");
+      const noButton = document.querySelector(".btn-no");
+      const catImg = document.querySelector(".cat-img");
+      const title = document.querySelector(".title");
+      const question = document.querySelector(".question");
+
+      const MAX_IMAGES = 5;
+      let count = 0;
+
+      const listGambar = [
+        "https://media1.tenor.com/m/BbSkyx3DaEgAAAAd/goma-sad.gif",
+        "https://media.tenor.com/M9WbqMQ2ISwAAAAi/annoyed.gif",
+        "https://i.pinimg.com/originals/96/43/2e/96432e7570c1d014a84085379ba369d7.gif",
+        "https://i.pinimg.com/originals/e1/64/7b/e1647b7fd330918520b12076a8a2dfcd.gif",
+        "https://media1.tenor.com/m/M_5Qg9ok3HQAAAAC/cat-pout.gif",
+        "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW9temgzcjlieHJtOXM2YXhoeW94N2k2c3ljcmtpYTZ4NnBicm0ybyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/f9EmXxglhdhAj1bo28/giphy.webp",
+      ];
+
+      const questionTexts = [
+        "Masih marah kah? 🥺",
+        "Jangan marah dong 😢",
+        "Aku sedih loh... 😿",
+        "Coba pikir lagi deh 💔",
+        "Klik Iya aja dong 😭💕",
+      ];
+
+      yesButton.addEventListener("click", function () {
+        buttonsContainer.classList.add("hidden");
+        title.innerHTML = "YEEAAYYY 💕";
+        question.innerHTML = "Sekarang kita udah baikann 😍💖";
+        numberContainer.classList.remove("hidden");
+        catImg.src = listGambar[5];
+      });
+
+      noButton.addEventListener("click", function () {
+        count++;
+
+        if (count <= MAX_IMAGES) {
+          catImg.src = listGambar[count - 1];
+        }
+
+        question.innerHTML =
+          questionTexts[Math.min(count - 1, questionTexts.length - 1)];
+
+        const randomX = Math.floor(Math.random() * 250) - 125;
+        const randomY = Math.floor(Math.random() * 250) - 125;
+
+        noButton.style.position = "absolute";
+        noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
+
+        const messages = [
+          "Yakin? 🥺",
+          "Gaboleh 😝",
+          "Hehehe 😆",
+          "Klik Iya dong 💘",
+          "Kabuurrrr",
+        ];
+
+        noButton.innerHTML = messages[Math.min(count - 1, messages.length - 1)];
+      });
+    </script>
+  </body>
+</html>
