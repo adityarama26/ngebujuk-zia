@@ -3,32 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <title>For My Love 💕</title>
-
+    <!-- Animate.css -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
 
-    <style>
-      body {
-        background-image: url("https://img.freepik.com/premium-photo/defocused-lights-form-heart-black-background_607094-211.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
 
-      .btn-no {
-        position: relative;
-      }
-    </style>
+    <title>For My Love 💕</title>
   </head>
 
   <body class="flex items-center justify-center min-h-screen px-4">
+
+    <!-- 🎵 BACKSOUND -->
     <audio id="bg-music" loop>
-      <source src="MUSIK.mp3" type="audio/mpeg" />
+      <source
+        src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5b5f7c1c26.mp3?filename=romantic-background-112191.mp3"
+        type="audio/mpeg"
+      />
     </audio>
 
     <main
@@ -68,87 +66,15 @@
 
       <div class="numbers hidden mt-6">
         <a
-          href="https://wa.me/6282116735259"
+          href="https://wa.me/62812345678910"
           class="bg-green-500 hover:bg-green-600 transition text-white py-2 px-5 rounded-full text-lg font-bold shadow-lg"
         >
-          Chat Aku Sekarang Yaa💬💕
+          Chat Aku Sekarang Yaa 💬💕
         </a>
       </div>
     </main>
 
-    <script>
-      const music = document.getElementById("bg-music");
-
-      document.addEventListener(
-        "click",
-        function () {
-          music.play();
-        },
-        { once: true },
-      );
-
-      const buttonsContainer = document.querySelector(".buttons");
-      const numberContainer = document.querySelector(".numbers");
-      const yesButton = document.querySelector(".btn-yes");
-      const noButton = document.querySelector(".btn-no");
-      const catImg = document.querySelector(".cat-img");
-      const title = document.querySelector(".title");
-      const question = document.querySelector(".question");
-
-      const MAX_IMAGES = 5;
-      let count = 0;
-
-      const listGambar = [
-        "https://media1.tenor.com/m/BbSkyx3DaEgAAAAd/goma-sad.gif",
-        "https://media.tenor.com/M9WbqMQ2ISwAAAAi/annoyed.gif",
-        "https://i.pinimg.com/originals/96/43/2e/96432e7570c1d014a84085379ba369d7.gif",
-        "https://i.pinimg.com/originals/e1/64/7b/e1647b7fd330918520b12076a8a2dfcd.gif",
-        "https://media1.tenor.com/m/M_5Qg9ok3HQAAAAC/cat-pout.gif",
-        "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW9temgzcjlieHJtOXM2YXhoeW94N2k2c3ljcmtpYTZ4NnBicm0ybyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/f9EmXxglhdhAj1bo28/giphy.webp",
-      ];
-
-      const questionTexts = [
-        "Masih marah kah? 🥺",
-        "Jangan marah dong 😢",
-        "Aku sedih loh... 😿",
-        "Coba pikir lagi deh 💔",
-        "Klik Iya aja dong 😭💕",
-      ];
-
-      yesButton.addEventListener("click", function () {
-        buttonsContainer.classList.add("hidden");
-        title.innerHTML = "YEEAAYYY 💕";
-        question.innerHTML = "Sekarang kita udah baikann 😍💖";
-        numberContainer.classList.remove("hidden");
-        catImg.src = listGambar[5];
-      });
-
-      noButton.addEventListener("click", function () {
-        count++;
-
-        if (count <= MAX_IMAGES) {
-          catImg.src = listGambar[count - 1];
-        }
-
-        question.innerHTML =
-          questionTexts[Math.min(count - 1, questionTexts.length - 1)];
-
-        const randomX = Math.floor(Math.random() * 250) - 125;
-        const randomY = Math.floor(Math.random() * 250) - 125;
-
-        noButton.style.position = "absolute";
-        noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
-
-        const messages = [
-          "Yakin? 🥺",
-          "Gaboleh 😝",
-          "Hehehe 😆",
-          "Klik Iya dong 💘",
-          "Kabuurrrr",
-        ];
-
-        noButton.innerHTML = messages[Math.min(count - 1, messages.length - 1)];
-      });
-    </script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
   </body>
 </html>
